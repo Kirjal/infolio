@@ -6,7 +6,7 @@ import Cv from "@/pages/Cv";
 const router = createRouter({
     routes: [
         {path: "/", name: "accueil", component: Accueil},
-        {path: "/portfolio", name: "portfolio", component: Portfolio},
+        {path: "/dessins", name: "portfolio", component: Portfolio},
         {path: "/CV", name: "cv", component: Cv}
     ],
     strict: true,
