@@ -40,7 +40,7 @@
     h2{
         text-align: center;
         padding:10px;
-        box-shadow: 3px 7px 10px #0008;
+        box-shadow: 0 15px 10px -10px #0008;
     }
 
     main a{
@@ -60,7 +60,7 @@
 
     article{
         text-align: center;
-        background-color: #fd5;
+        background-color: var(--warning-color);
         color: #233;
         font-weight: bold;
         padding: 20px;

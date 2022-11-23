@@ -45,6 +45,9 @@ export default {
   --link-bg-hover: #eff;
   --link-text-color: #233;
   --link-text-hover: #233;
+  --warning-color: #fd5;
+  --title-color: #344;
+  --title-bg: #eff;
 }
 
 *{

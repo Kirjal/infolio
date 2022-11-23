@@ -14,7 +14,7 @@
                 <router-link :to="{name:'accueil'}">Accueil</router-link>
             </li>
             <li>
-                <router-link :to="{name:'portfolio'}">Portfolio</router-link>
+                <router-link :to="{name:'portfolio'}">Dessins</router-link>
             </li>
             <li>
                 <router-link :to="{name:'cv'}">CV</router-link>
@@ -74,7 +74,7 @@
 
     .menu div{
         height: 6px;
-        width: 35px;
+        width: 40px;
         border-radius:3px;
         background-color: var(--link-bg-color);
         transition: all 0.3s;
@@ -94,6 +94,9 @@
         position: absolute;
         top: 53px;
         left: 22.5px;
+    }
+    .nav_open .menu div{
+        width: 35px;
     }
     .nav_open .menu div:first-child{
         position: absolute;
@@ -124,10 +127,16 @@
 
     .logo{
         position: absolute;
-        width: 140px;
+        width: 280px;
+        height: 100px;
         text-align: center;
-        left:30px;
-        top:20px;
+        left:0;
+        top:0;
+        box-shadow: 0 15px 10px -10px #0008;
+    }
+
+    .logo h2{
+        margin-top: 17px;
     }
 
     .logo a{
