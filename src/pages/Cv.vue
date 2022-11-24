@@ -162,7 +162,7 @@
             hobbies: [
                 {
                     title: "Jeux vidéo",
-                    description: "Épreuvres en groupe de 12, analyse de données"
+                    description: "Épreuves en groupe de 12, analyse de données"
                 },
                 {
                     title: "Dessin, peinture",

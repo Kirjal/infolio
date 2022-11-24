@@ -58,7 +58,7 @@ export default {
 }
 
 #app {
-  font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+  font-family: century-gothic, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--main-bg-color);
