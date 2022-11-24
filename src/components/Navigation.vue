@@ -73,21 +73,21 @@
     }
 
     .menu div{
-        height: 6px;
+        height: 8px;
         width: 40px;
-        border-radius:3px;
-        background-color: var(--link-bg-color);
+        border-radius:4px;
+        background-color: var(--link-bg-hover);
         transition: all 0.3s;
     }
 
     .menu div:first-child{
         position: absolute;
-        top: 21px;
+        top: 19px;
         left: 22.5px;
     }
     .menu div:nth-child(2){
         position: absolute;
-        top: 37px;
+        top: 36px;
         left: 22.5px;
     }
     .menu div:last-child{
@@ -101,7 +101,7 @@
     .nav_open .menu div:first-child{
         position: absolute;
         transform: rotate(45deg);
-        top: 26.5px;
+        top: 25.5px;
         left: 30px;
     }
     .nav_open .menu div:nth-child(2){
@@ -111,7 +111,7 @@
     .nav_open .menu div:last-child{
         position: absolute;
         transform: rotate(-45deg);
-        top: 47.5px;
+        top: 46.5px;
         left: 30px;
     }
 
@@ -161,13 +161,13 @@
         left: calc(100vw - 280px);
     }
 
-    @media (min-width: 996px){
+    @media (min-width: 830px){
         .menu{
-            bottom: calc(100vh - 97px)
+            bottom: calc(100vh - 95px)
         }
 
         ul{
-            padding-top: 120px;
+            padding-top: 130px;
             flex-flow: column wrap;
         }
     }

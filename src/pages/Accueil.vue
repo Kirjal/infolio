@@ -5,7 +5,7 @@
     </header>
 
     <main>
-        <h2>Quoi de neuf par ici?</h2>
+        <h2>Par ici, j'expose des choses :</h2>
         <ul>
             <li>
                 <h3><router-link :to="{name:'cv'}">Mon CV</router-link></h3>
@@ -16,7 +16,7 @@
         </ul>
     </main>
 
-    <article>/!\ Le site est actuellement en pleine remise en forme /!\</article>
+    <!--<article>/!\ Le site est actuellement en pleine remise en forme /!\</article>-->
 </template>
 
 <script>
@@ -45,6 +45,7 @@
 
     main a{
         width: 100%;
+        max-width: 500px;
         padding:10px 0 12px;
     }
     

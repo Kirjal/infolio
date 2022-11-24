@@ -4,51 +4,57 @@
         <h2>{{this.name}}</h2>
         <p>{{this.catchphrase}}</p>
         <ul class="contact">
+            <li><a :href="this.linkedin">LinkedIn</a></li>
             <li>{{this.tel}}</li>
-            <li>{{this.mail}}</li>
+            <li><a :href="`mailto:${this.mail}`">{{this.mail}}</a></li>
         </ul>
     </header>
     <main>
-        <h3>Compétences</h3>
-        <ul>
-            <li v-for="s in this.skills" :key="s.id"><p><b>{{s}}</b></p></li>
-        </ul>
-        <h3>Expériences</h3>
-        <ul>
-            <li v-for="e in this.experiences" :key="e.id">
-                <p><b>{{e.title}}</b></p>
-                <p>{{e.description}}</p>
-                <p>{{e.date}}</p>
-            </li>
-        </ul>
-        <h3>Formations</h3>
-        <ul>
-            <li v-for="t in this.training" :key="t.id">
-                <p><b>{{t.title}}</b></p>
-                <p>{{t.description}}</p>
-                <p>{{t.date}}</p>
-            </li>
-        </ul>
-        <h4>Atouts</h4>
-        <ul>
-            <li v-for="s in this.soft_skills" :key="s.id">
-                <p><b>{{s.title}}</b></p>
-                <p>{{s.description}}</p>
-            </li>
-        </ul>
-        <h4>Langues</h4>
-        <ul>
-            <li v-for="l in this.languages" :key="l.id">
-                <p><b>{{l.title}}</b> - {{l.level}}</p>
-            </li>
-        </ul>
-        <h4>Loisirs</h4>
-        <ul>
-            <li v-for="h in this.hobbies" :key="h.id">
-                <p><b>{{h.title}}</b></p>
-                <p>{{h.description}}</p>
-            </li>
-        </ul>
+        <section class="goche">
+            <h3>Compétences</h3>
+            <ul>
+                <li v-for="s in this.skills" :key="s.id"><p><b>{{s}}</b></p></li>
+            </ul>
+            <h3>Expériences</h3>
+            <ul>
+                <li v-for="e in this.experiences" :key="e.id">
+                    <p><b>{{e.title}}</b></p>
+                    <p>{{e.description}}</p>
+                    <p>{{e.date}}</p>
+                </li>
+            </ul>
+            <h3>Formations</h3>
+            <ul>
+                <li v-for="t in this.training" :key="t.id">
+                    <p><b>{{t.title}}</b></p>
+                    <p>{{t.description}}</p>
+                    <p>{{t.date}}</p>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="droate">
+            <h4>Atouts</h4>
+            <ul>
+                <li v-for="s in this.soft_skills" :key="s.id">
+                    <p><b>{{s.title}}</b></p>
+                    <p>{{s.description}}</p>
+                </li>
+            </ul>
+            <h4>Langues</h4>
+            <ul>
+                <li v-for="l in this.languages" :key="l.id">
+                    <p><b>{{l.title}}</b> - {{l.level}}</p>
+                </li>
+            </ul>
+            <h4>Loisirs</h4>
+            <ul>
+                <li v-for="h in this.hobbies" :key="h.id">
+                    <p><b>{{h.title}}</b></p>
+                    <p>{{h.description}}</p>
+                </li>
+            </ul>
+        </section>
     </main>
 </template>
 
@@ -61,6 +67,7 @@
             catchphrase: "À la recherche de défis, je souhaite mettre mes compétences à l'épreuve",
             tel: "06 03 59 93 46",
             mail: "Alexandre_Demontier@hotmail.fr",
+            linkedin: "https://www.linkedin.com/in/alexandre-demontier-778468167/",
             skills: [
                 "Code front-end en HTML, CSS, JS, et via Angular, VueJS, ReactJS",
                 "Design, intégration responsive et accessible",
@@ -178,11 +185,17 @@
         flex-flow: column wrap;
         box-shadow: 0 15px 10px -10px #0008;
         margin-bottom: 10px;
+        padding-bottom: 20px;
+    }
+
+    section{
+        display: flex;
+        gap: 5px;
+        flex-flow: column wrap;
     }
 
     main{
         display: flex;
-        gap: 5px;
         flex-flow: column wrap;
         padding-bottom: 100px;
     }
@@ -213,7 +226,7 @@
         background-color: var(--title-bg);
     }
 
-    h3 + ul b{
+    .goche ul b{
         margin-top: 5px;
         margin-bottom: 5px;
         padding: 5px 30px;
@@ -232,7 +245,7 @@
         background-color: var(--title-bg);
     }
 
-    h4 + ul{
+    .droate ul{
         margin-right: 20px;
     }
 
@@ -255,13 +268,21 @@
         padding: 0 10px 10px 0;
     }
 
+    .contact a{
+        color: var(--main-text-color);
+        background-color: transparent;
+        font-weight: normal;
+        padding:0;
+        text-decoration: underline;
+    }
+
     main li{
         display: flex;
         flex-flow: column wrap;
         gap: 5px;
     }
 
-    h3 + ul li p:not(:first-child){
+    .goche li p:not(:first-child){
         margin-left: 20px;
     }
     
@@ -272,13 +293,58 @@
         padding: 10px 0
     }
 
-    h4 + ul{
+    .droate ul{
         text-align: right;
     }
 
     @media (max-width: 450px){
         h1{
             width: 280px;
+        }
+    }
+
+    @media (min-width: 600px){
+        header{
+            flex-flow: row wrap;
+            gap: 0;
+            justify-content: space-between;
+        }
+        header p{
+            padding: 0 0 0 20px;
+            align-self: center;
+            max-width: 50%;
+            width: auto;
+        }
+        .contact{
+            padding: 0 20px 0 0;
+            align-self: center;
+        }
+        h1{
+            width: 100%;
+            margin: 10px auto 20px;
+        }
+        h2{
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 830px){
+        h1{
+            margin: 10px auto 20px 30px;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: 1024px){
+        main{
+            flex-flow: row;
+            justify-content: space-between;
+        }
+        .goche h3, .goche ul{
+            max-width: 55vw;
+        }
+        .droate h4, .droate ul{
+            max-width: 40vw;
         }
     }
 </style>

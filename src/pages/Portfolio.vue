@@ -4,7 +4,12 @@
         <li :class="i.open? 'current_image' : ''" v-for="i of this.images" :key="i.id" @click="closeTabs(this.images, i.id); i.open=!i.open">
             <img :src="i. link"/>
             <p class="desc">{{i.description}}</p>
+            <div class="dropdown">
+                <div></div>
+                <div></div>
+            </div>
         </li>
+        <h2>Allez-y, cliquez-donc sur une image !</h2>
     </ul>
 </template>
 
@@ -33,7 +38,8 @@
                 {id: 18, link: "/assets/img/18_roller.jpg", description: "Un jeune homme qui vole si haut dans le ciel avec ses rollers, dessiné au feutre noir fin.", open: false},
                 {id: 19, link: "/assets/img/19_rainbow.jpg", description: "Une jeune femme aux cheveux arc-en-ciel assise à un bar. Feutre noir fin et crayons de couleur.", open: false},
                 {id: 20, link: "/assets/img/20_yaquedescheveux.jpg", description: "Simple exercice de texture, pour montrer à un ami comment je dessine les cheveux, leur texture, et leurs reflets avec ce même feutre fin noir.", open: false},
-            ]
+            ],
+            image_open: false
         }),
         methods:{
             closeTabs(tab_list, i){
@@ -51,6 +57,14 @@
         margin-bottom: 20px;
     }
 
+    h2{
+        position: fixed;
+        width: 50vw;
+        left: 50vw;
+        top:45vh;
+        transition: all 0.3s;
+    }
+
     ul{
         max-width:100vw;
         display: flex;
@@ -59,7 +73,9 @@
 
     li{
         transition: all 0.3s;
-        padding:0 20px;
+        padding:0 20px 30px;
+        position: relative;
+        cursor: pointer;
     }
 
     .current_image{
@@ -96,5 +112,109 @@
         max-height: 300px;
         color: var(--main-text-color);
         padding: 15px 10px;
+    }
+
+    .dropdown{
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 15px);
+        height: 30px;
+        width: 30px;
+        background-color: var(--main-bg-color);
+        border-radius: 15px;
+        transition: all 0.3s;
+    }
+    .current_image .dropdown{
+        bottom: -10px;
+        box-shadow: 0 15px 10px -7px #0008;
+    }
+
+    .dropdown div{
+        background-color: var(--link-bg-hover);
+        height: 6px;
+        width: 12px;
+        border-radius: 3px;
+        position: absolute;
+        transition: all 0.3s;
+        top: 12px;
+    }
+    .dropdown div:first-child{
+        left: 6px;
+        transform: rotate(45deg);
+    }
+    .dropdown div:last-child{
+        right: 6px;
+        transform: rotate(-45deg);
+    }
+    .current_image .dropdown div:first-child{
+        transform: rotate(135deg);
+    }
+    .current_image .dropdown div:last-child{
+        transform: rotate(-135deg);
+    }
+
+    @media (min-width: 601px){
+        ul{
+            padding-top: 20px;
+        }
+        li{
+            width: 100vw;
+            margin-left: -20vw;
+            transform: rotate(5deg);
+            padding: 0;
+            z-index: 1;
+            margin-bottom: 25vw;
+        }
+        li:not(:first-child) img{
+            border-top: none;
+        }
+        img{
+            width: 60vw;
+            position: absolute;
+            left: 0;
+            z-index: 3;
+            box-shadow: 0 0 10px #0008;
+        }
+        .desc{
+            width: 40vw;
+            position: absolute;
+            padding: 15px 20px;
+            min-height: 30vw;
+            z-index: 2;
+            background: linear-gradient(180deg, #000c 0%, #0000 100%);
+        }
+        .dropdown{
+            transform: rotate(-95deg);
+            bottom: -10vw;
+            left: 60vw;   
+            background-color: transparent;         
+        }
+        .current_image{
+            margin-bottom: 37.5vw;
+            box-shadow: none;
+            transform: rotate(0deg);
+            margin-left: 0;
+            z-index: 2;
+        }
+        .current_image:not(:first-child){
+            margin-top:12.5vw;
+        }
+        .current_image img{
+            margin-left:0;
+            left: 40vw;
+        }
+        .current_image .desc{
+            padding: 15px 20px;
+            min-height: 30vw;
+        }
+        .current_image .dropdown{
+            bottom: -10vw;
+            box-shadow: none;
+            transform: rotate(-90deg);
+        }
+        .current_image ~ h2{
+            left: 70vw;
+            color: var(--transp-main-text-color);
+        }
     }
 </style>
