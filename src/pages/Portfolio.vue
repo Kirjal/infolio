@@ -170,6 +170,7 @@
         }
         img{
             width: 60vw;
+            max-width: 900px;
             position: absolute;
             left: 0;
             z-index: 3;
@@ -178,7 +179,7 @@
         .desc{
             width: 40vw;
             position: absolute;
-            padding: 15px 20px;
+            padding: 3vw 4vw;
             min-height: 30vw;
             z-index: 2;
             background: linear-gradient(180deg, #000c 0%, #0000 100%);
@@ -186,25 +187,25 @@
         .dropdown{
             transform: rotate(-95deg);
             bottom: -10vw;
-            left: 60vw;   
+            left: min(60vw, 950px);   
             background-color: transparent;         
         }
         .current_image{
-            margin-bottom: 37.5vw;
+            margin-bottom: 35vw;
             box-shadow: none;
             transform: rotate(0deg);
             margin-left: 0;
             z-index: 2;
         }
         .current_image:not(:first-child){
-            margin-top:12.5vw;
+            margin-top:0;
         }
         .current_image img{
             margin-left:0;
             left: 40vw;
         }
         .current_image .desc{
-            padding: 15px 20px;
+            padding: 3vw 4vw;
             min-height: 30vw;
         }
         .current_image .dropdown{
