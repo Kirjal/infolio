@@ -1,5 +1,7 @@
 # infolio
 
+Disponible [ici!](https://kirjal.fr)
+
 ## Project setup
 ```
 npm install
