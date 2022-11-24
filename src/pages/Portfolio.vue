@@ -63,6 +63,7 @@
         left: 50vw;
         top:45vh;
         transition: all 0.3s;
+        display:none;
     }
 
     ul{
@@ -154,6 +155,9 @@
     }
 
     @media (min-width: 601px){
+        h2{
+            display: inline-block;
+        }
         ul{
             padding-top: 20px;
         }
