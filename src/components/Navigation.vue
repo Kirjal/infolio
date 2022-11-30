@@ -66,6 +66,8 @@
         bottom: 0;
         right: -40px;
         transition: all 0.3s;
+        cursor: pointer;
+        z-index: 5;
     }
     .nav_open .menu{
         right: 240px;

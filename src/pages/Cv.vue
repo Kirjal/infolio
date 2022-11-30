@@ -4,9 +4,10 @@
         <h2>{{this.name}}</h2>
         <p>{{this.catchphrase}}</p>
         <ul class="contact">
-            <li><a :href="this.linkedin">LinkedIn</a></li>
+            <li>-> <a :href="this.github">GitHub</a></li>
+            <li>-> <a :href="this.linkedin">LinkedIn</a></li>
             <li>{{this.tel}}</li>
-            <li><a :href="`mailto:${this.mail}`">{{this.mail}}</a></li>
+            <li>-> <a :href="`mailto:${this.mail}`">{{this.mail}}</a></li>
         </ul>
     </header>
     <main>
@@ -68,6 +69,7 @@
             tel: "06 03 59 93 46",
             mail: "Alexandre_Demontier@hotmail.fr",
             linkedin: "https://www.linkedin.com/in/alexandre-demontier-778468167/",
+            github: "https://github.com/Kirjal",
             skills: [
                 "Code front-end en HTML, CSS, JS, et via Angular, VueJS, ReactJS",
                 "Design, intégration responsive et accessible",
@@ -75,9 +77,9 @@
             ],
             experiences: [
                 {
-                    title: "Conception d'un site pour un job dating",
-                    description: "C'est le site sur lequel vous naviguez actuellement",
-                    date: "2022, 2 semaines"
+                    title: "Design et intégration d'un site personnel",
+                    description: "C'est le site sur lequel vous naviguez actuellement, fait avec Vue.js",
+                    date: "2022"
                 },
                 {
                     title: "Organisation d'un job-dating - Clockwork Lille",
@@ -186,6 +188,8 @@
         box-shadow: 0 15px 10px -10px #0008;
         margin-bottom: 10px;
         padding-bottom: 20px;
+        max-width: 1300px;
+        margin: auto;
     }
 
     section{
@@ -198,6 +202,8 @@
         display: flex;
         flex-flow: column wrap;
         padding-bottom: 100px;
+        max-width: 1300px;
+        margin: auto;
     }
 
     h1{
@@ -216,14 +222,20 @@
         padding: 3px 0 5px 7px;
     }
 
-    h3{
-        font-size: 1.8rem;
-        width: 250px;
-        margin: 15px auto 0 0;
-        padding: 3px 20px 5px;
-        border-radius: 0 50px 50px 0;
+    h3, h4{
+        width: 300px;
+        padding: 3px 50px 5px;
+        border-radius: 50px;
         color: var(--title-color);
         background-color: var(--title-bg);
+
+    }
+
+    h3{
+        width: 300px;
+        font-size: 1.8rem;
+        margin: 15px auto 0 -30px;
+        text-align: left;
     }
 
     .goche ul b{
@@ -235,14 +247,10 @@
     }
 
     h4{
-        font-size: 1.6rem;
         width: 250px;
-        margin: 15px 0 0 auto;
-        padding: 3px 20px 5px;
-        border-radius: 50px 0 0 50px;
+        font-size: 1.6rem;
+        margin: 15px -30px 0 auto;
         text-align: right;
-        color: var(--title-color);
-        background-color: var(--title-bg);
     }
 
     .droate ul{
@@ -273,6 +281,9 @@
         background-color: transparent;
         font-weight: normal;
         padding:0;
+    }
+
+    .contact a:hover{
         text-decoration: underline;
     }
 
@@ -345,6 +356,12 @@
         }
         .droate h4, .droate ul{
             max-width: 40vw;
+        }
+    }
+
+    @media (min-width: 1200px){
+        h3, h4{
+            text-align: center;
         }
     }
 </style>
