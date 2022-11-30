@@ -97,6 +97,9 @@
         width:100%;
         max-width:100vw;
         transition: all 0.3s;
+        user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
     }
     li:not(:first-child) img{
         border-top: 20px solid var(--main-bg-color);
