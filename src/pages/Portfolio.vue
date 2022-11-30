@@ -2,8 +2,10 @@
     <h1>Des dessins, des dessins !</h1>
     <ul v-if="this.images">
         <li :class="i.open? 'current_image' : ''" v-for="i of this.images" :key="i.id" @click="closeTabs(this.images, i.id); i.open=!i.open">
-            <img :src="i. link"/>
-            <p class="desc">{{i.description}}</p>
+            <div class="image">
+                <img :src="i. link"/>
+                <p class="desc">{{i.description}}</p>
+            </div>
             <div class="dropdown">
                 <div></div>
                 <div></div>
@@ -20,7 +22,7 @@
             images:[
                 {id: 1, link: "/assets/img/3_meca.jpg", description: "Jambe d'exosquelette mécanique géant, au feutre fin noir. Inspiré par le style des Skells dans Xenoblade Chronicles X.", open: false},
                 {id: 2, link: "/assets/img/2_cheveux.jpg", description: "Une personne imaginaire au feutre fin noir, pour dessiner des cheveux longs, leur texture et leurs ombres.", open: false},
-                {id: 3, link: "/assets/img/1_chaton.jpg", description: "Joli petit chaton avec une vieille épée.", open: false},
+                {id: 3, link: "/assets/img/1_chaton.jpg", description: "Mignon petit chaton avec une vieille épée.", open: false},
                 {id: 4, link: "/assets/img/4_peinture.jpg", description: "Peinture à gauche, feutre fin noir à droite. Des villes volantes, un côté futuriste, presque cyberpunk.", open: false},
                 {id: 5, link: "/assets/img/5_fusain.jpg", description: "Dessin au fusain de l'ENSAIT, \"l'école d'en face\" lorsque j'étais à l'ESAAT. On aperçoit en bas le bâtiment de la cantine.", open: false},
                 {id: 6, link: "/assets/img/6_cdi.jpg", description: "Une scène du CDI de l'ESAD au feutre noir fin.", open: false},
@@ -64,6 +66,9 @@
         top:45vh;
         transition: all 0.3s;
         display:none;
+        user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
     }
 
     ul{
@@ -92,6 +97,9 @@
         width:100%;
         max-width:100vw;
         transition: all 0.3s;
+        user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
     }
     li:not(:first-child) img{
         border-top: 20px solid var(--main-bg-color);
@@ -154,7 +162,7 @@
         transform: rotate(-135deg);
     }
 
-    @media (min-width: 601px){
+    @media (min-width: 830px){
         h2{
             display: inline-block;
         }
@@ -162,61 +170,70 @@
             padding-top: 20px;
         }
         li{
-            width: 100vw;
+            width:0;
             margin-left: -20vw;
             transform: rotate(5deg);
             padding: 0;
             z-index: 1;
-            margin-bottom: 25vw;
+            margin-bottom: min(25vw, 375px);
         }
         li:not(:first-child) img{
             border-top: none;
         }
-        img{
-            width: 60vw;
-            max-width: 900px;
+        .image{
+            max-width: min(900px, 60vw);
+            max-height: 100vh;
             position: absolute;
             left: 0;
             z-index: 3;
-            box-shadow: 0 0 10px #0008;
+            transition: all 0.3s;
+        }
+        img{
+            width: 60vw;
+            max-width: 900px;
+            max-height: 80vh;
+            object-fit: contain;
+            background-color: transparent;
         }
         .desc{
-            width: 40vw;
-            position: absolute;
-            padding: 3vw 4vw;
-            min-height: 30vw;
-            z-index: 2;
-            background: linear-gradient(180deg, #000c 0%, #0000 100%);
+            width: 100%;
+            padding: 20px 40px;
+            opacity: 0;
+            margin-top: -4px;
+            transform: rotate(-5deg);
+            text-align: center;
         }
         .dropdown{
-            transform: rotate(-95deg);
+            /*transform: rotate(-95deg);
             bottom: -10vw;
-            left: min(60vw, 950px);   
-            background-color: transparent;         
+            left: min(60vw, 750px);   
+            background-color: transparent;*/
+            display:none;
         }
         .current_image{
-            margin-bottom: 35vw;
+            margin-bottom: min(25vw, 375px);
             box-shadow: none;
             transform: rotate(0deg);
             margin-left: 0;
-            z-index: 2;
         }
         .current_image:not(:first-child){
             margin-top:0;
         }
-        .current_image img{
+        .current_image .image{
             margin-left:0;
             left: 40vw;
         }
         .current_image .desc{
-            padding: 3vw 4vw;
-            min-height: 30vw;
+            padding: 20px 40px;
+            opacity: 1;
+            box-shadow: 0 15px 10px -10px #0008;
+            transform: rotate(0deg);
         }
-        .current_image .dropdown{
+        /*.current_image .dropdown{
             bottom: -10vw;
             box-shadow: none;
             transform: rotate(-90deg);
-        }
+        }*/
         .current_image ~ h2{
             left: 70vw;
             color: var(--transp-main-text-color);

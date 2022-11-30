@@ -39,6 +39,7 @@ export default {
 @import url("https://use.typekit.net/zhc2dwp.css");
 :root{
   --main-bg-color:  #233;
+  --main-bg-transp: #2330;
   --main-text-color:  #eff;
   --transp-main-text-color: #eff0;
   --link-bg-color: #cdd;
