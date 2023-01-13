@@ -132,23 +132,23 @@
             soft_skills: [
                 {
                     title: "Créativité",
-                    description: "Idées originales et goût esthétique travaillé"
+                    description: /*"Idées originales et goût esthétique travaillé"*/""
                 },
                 {
                     title: "Sens du contact",
-                    description: "Bonne humeur et bonne entente, empathie"
+                    description: /*"Bonne humeur et bonne entente, empathie"*/""
                 },
                 {
                     title: "Curiosité",
-                    description: "Recherche de méthodes et idées, veille métier"
+                    description: /*"Recherche de méthodes et idées, veille métier"*/""
                 },
                 {
                     title: "Travail d'équipe",
-                    description: "Communication, répartition des tâches, prise de recul"
+                    description: /*"Communication, répartition des tâches, prise de recul"*/""
                 },
                 {
                     title: "Adaptabilité",
-                    description: "Dépasser les contraintes pour trouver des solutions"
+                    description: /*"Dépasser les contraintes pour trouver des solutions"*/""
                 }
             ],
             languages: [
@@ -164,15 +164,15 @@
             hobbies: [
                 {
                     title: "Jeux vidéo",
-                    description: "Épreuves en groupe de 12, analyse de données"
+                    description: /*"Épreuves en groupe de 12, analyse de données"*/""
                 },
                 {
                     title: "Dessin, peinture",
-                    description: "Dessin de personnages ou environnements imaginaires, modèle vivant"
+                    description: /*"Dessin de personnages ou environnements imaginaires, modèle vivant"*/""
                 },
                 {
                     title: "Roller",
-                    description: "Sorties avec des amis, ou déplacement au travail"
+                    description: /*"Sorties avec des amis, ou déplacement au travail"*/""
                 }
             ]
         })
@@ -196,6 +196,8 @@
         display: flex;
         gap: 5px;
         flex-flow: column wrap;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     main{
@@ -239,11 +241,18 @@
     }
 
     .goche ul b{
+        display: inline-block;
+    }
+
+    .goche ul b, .droate ul b{
         margin-top: 5px;
         margin-bottom: 5px;
         padding: 5px 30px;
-        display: inline-block;
         box-shadow: 0 15px 10px -10px #0008;
+    }
+
+    .droate ul li{
+        margin: 10px 0;
     }
 
     h4{
@@ -350,6 +359,12 @@
         main{
             flex-flow: row;
             justify-content: space-between;
+        }
+        .goche{
+            max-width:60%;
+        }
+        .droate{
+            margin-left: 30px;
         }
         .goche h3, .goche ul{
             max-width: 55vw;
