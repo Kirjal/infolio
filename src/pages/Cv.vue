@@ -236,7 +236,7 @@
     h3{
         width: 300px;
         font-size: 1.8rem;
-        margin: 15px auto 0 -30px;
+        margin: 15px auto 0 -40px;
         text-align: left;
     }
 
@@ -258,7 +258,7 @@
     h4{
         width: 250px;
         font-size: 1.6rem;
-        margin: 15px -30px 0 auto;
+        margin: 15px -40px 0 auto;
         text-align: right;
     }
 
