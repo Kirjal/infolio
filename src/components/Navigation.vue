@@ -49,12 +49,14 @@
         right: 0;
         height: 100vh;
         width: 0;
-        transition: all 0.3s;
-        background-color: #0008;
+        transition: all 0.3s, width 0.6s 0.3s;
+        background-color: #0000;
     }
     .nav_open .nav_screen_block{
         width: calc(100vw - 280px);
         right: 280px;
+        background-color: #000b;
+        transition: all 0.3s, background-color 0.6s;
     }
 
     .menu{
