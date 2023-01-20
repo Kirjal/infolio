@@ -35,7 +35,7 @@
 <style scoped>
     nav{
         position: fixed;
-        left: 100vw;
+        right: -280px;
         top: 0;
         width: 280px;
         transition: all 0.3s;
@@ -115,7 +115,7 @@
     .nav_open .menu div:last-child{
         position: absolute;
         transform: rotate(-45deg);
-        top: 46.5px;
+        top: 45.5px;
         left: 30px;
     }
 
@@ -162,7 +162,7 @@
         width:100%;
     }
     .nav_open{
-        left: calc(100vw - 280px);
+        right: 0;
     }
 
     @media (min-width: 830px){
