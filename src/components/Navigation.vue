@@ -40,20 +40,20 @@
         width: 280px;
         transition: all 0.3s;
         z-index: 5;
-        height: 100vh;
+        height: 100%;
     }
 
     .nav_screen_block{
         position: fixed;
         top: 0;
         right: 0;
-        height: 100vh;
+        height: 100%;
         width: 0;
         transition: all 0.3s, width 0.6s 0.3s;
         background-color: #0000;
     }
     .nav_open .nav_screen_block{
-        width: calc(100vw - 280px);
+        width: calc(100% - 280px);
         right: 280px;
         background-color: #000b;
         transition: all 0.3s, background-color 0.6s;
@@ -167,7 +167,7 @@
 
     @media (min-width: 830px){
         .menu{
-            bottom: calc(100vh - 95px)
+            bottom: calc(100% - 95px)
         }
 
         ul{
