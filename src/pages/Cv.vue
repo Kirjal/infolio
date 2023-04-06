@@ -1,68 +1,71 @@
 <template>
-    <header>
-        <h1>{{this.title}}</h1>
-        <h2>{{this.name}}</h2>
-        <p>{{this.catchphrase}}</p>
-        <ul class="contact">
-            <li>-> <a :href="this.github">GitHub</a></li>
-            <li>-> <a :href="this.linkedin">LinkedIn</a></li>
-            <li>{{this.tel}}</li>
-            <li>-> <a :href="`mailto:${this.mail}`">{{this.mail}}</a></li>
-        </ul>
-    </header>
-    <main>
-        <section class="goche">
-            <h3>Compétences</h3>
-            <ul>
-                <li v-for="s in this.skills" :key="s.id"><p><b>{{s}}</b></p></li>
+    <div :class="this.opacity_transition? 'load_smoothing transparent' : 'load_smoothing'">
+        <header :class="this.opacity_transition? 'smoothing' : ''">
+            <h1>{{this.title}}</h1>
+            <h2>{{this.name}}</h2>
+            <p>{{this.catchphrase}}</p>
+            <ul class="contact">
+                <li>-> <a :href="this.github">GitHub</a></li>
+                <li>-> <a :href="this.linkedin">LinkedIn</a></li>
+                <li>{{this.tel}}</li>
+                <li>-> <a :href="`mailto:${this.mail}`">{{this.mail}}</a></li>
             </ul>
-            <h3>Expériences</h3>
-            <ul>
-                <li v-for="e in this.experiences" :key="e.id">
-                    <p><b>{{e.title}}</b></p>
-                    <p>{{e.description}}</p>
-                    <p>{{e.date}}</p>
-                </li>
-            </ul>
-            <h3>Formations</h3>
-            <ul>
-                <li v-for="t in this.training" :key="t.id">
-                    <p><b>{{t.title}}</b></p>
-                    <p>{{t.description}}</p>
-                    <p>{{t.date}}</p>
-                </li>
-            </ul>
-        </section>
-        
-        <section class="droate">
-            <h4>Atouts</h4>
-            <ul>
-                <li v-for="s in this.soft_skills" :key="s.id">
-                    <p><b>{{s.title}}</b></p>
-                    <p>{{s.description}}</p>
-                </li>
-            </ul>
-            <h4>Langues</h4>
-            <ul>
-                <li v-for="l in this.languages" :key="l.id">
-                    <p><b>{{l.title}}</b> - {{l.level}}</p>
-                </li>
-            </ul>
-            <h4>Loisirs</h4>
-            <ul>
-                <li v-for="h in this.hobbies" :key="h.id">
-                    <p><b>{{h.title}}</b></p>
-                    <p>{{h.description}}</p>
-                </li>
-            </ul>
-        </section>
-    </main>
+        </header>
+        <main>
+            <section class="goche" :class="this.opacity_transition? 'smoothing' : ''">
+                <h3>Compétences</h3>
+                <ul>
+                    <li v-for="s in this.skills" :key="s.id"><p><b>{{s}}</b></p></li>
+                </ul>
+                <h3>Expériences</h3>
+                <ul>
+                    <li v-for="e in this.experiences" :key="e.id">
+                        <p><b>{{e.title}}</b></p>
+                        <p>{{e.description}}</p>
+                        <p>{{e.date}}</p>
+                    </li>
+                </ul>
+                <h3>Formations</h3>
+                <ul>
+                    <li v-for="t in this.training" :key="t.id">
+                        <p><b>{{t.title}}</b></p>
+                        <p>{{t.description}}</p>
+                        <p>{{t.date}}</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="droate" :class="this.opacity_transition? 'smoothing' : ''">
+                <h4>Atouts</h4>
+                <ul>
+                    <li v-for="s in this.soft_skills" :key="s.id">
+                        <p><b>{{s.title}}</b></p>
+                        <p>{{s.description}}</p>
+                    </li>
+                </ul>
+                <h4>Langues</h4>
+                <ul>
+                    <li v-for="l in this.languages" :key="l.id">
+                        <p><b>{{l.title}}</b> - {{l.level}}</p>
+                    </li>
+                </ul>
+                <h4>Loisirs</h4>
+                <ul>
+                    <li v-for="h in this.hobbies" :key="h.id">
+                        <p><b>{{h.title}}</b></p>
+                        <p>{{h.description}}</p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </template>
 
 <script>
     export default {
         name: 'CvComponent',
         data:()=>({
+            opacity_transition: true,
             title: "Développeur front-end",
             name: "Alexandre Demontier : CV",
             catchphrase: "À la recherche de défis, je souhaite mettre mes compétences à l'épreuve",
@@ -175,7 +178,10 @@
                     description: /*"Sorties avec des amis, ou déplacement au travail"*/""
                 }
             ]
-        })
+        }),
+        mounted(){
+            setTimeout(()=>{this.opacity_transition = false}, 100);
+        }
     }
 </script>
 
@@ -190,6 +196,7 @@
         padding-bottom: 20px;
         max-width: 1300px;
         margin: auto;
+        transition: all 0.5s;
     }
 
     section{
@@ -198,6 +205,7 @@
         flex-flow: column wrap;
         padding-left: 20px;
         padding-right: 20px;
+        transition: all 0.5s;
     }
 
     main{
@@ -222,6 +230,7 @@
         background-color: var(--title-bg);
         margin-bottom: 10px;
         padding: 3px 0 5px 7px;
+        width: 100%;
     }
 
     h3, h4{
@@ -230,7 +239,7 @@
         border-radius: 50px;
         color: var(--title-color);
         background-color: var(--title-bg);
-
+        transition: all 0.5s;
     }
 
     h3{
@@ -247,7 +256,7 @@
     .goche ul b, .droate ul b{
         margin-top: 5px;
         margin-bottom: 5px;
-        padding: 5px 30px;
+        padding: 5px 25px;
         box-shadow: 0 15px 10px -10px #0008;
     }
 
@@ -258,8 +267,8 @@
     h4{
         width: 250px;
         font-size: 1.6rem;
-        margin: 15px -40px 0 auto;
-        text-align: right;
+        margin: /*15px -40px 0 auto*/15px auto 0 -40px;
+        text-align: left;
     }
 
     .droate ul{
@@ -314,7 +323,7 @@
     }
 
     .droate ul{
-        text-align: right;
+        text-align: left;
     }
 
     @media (max-width: 450px){
@@ -346,6 +355,9 @@
         h2{
             width: 100%;
         }
+        .goche ul b, .droate ul b{
+            padding: 5px 30px;
+        }
     }
 
     @media (min-width: 830px){
@@ -366,17 +378,35 @@
         .droate{
             margin-left: 30px;
         }
+        h3, h4{
+            text-align: center;
+        }
+        h4{
+            margin: 15px -40px 0 auto;
+        }
+        .droate ul{
+            text-align: right;
+        }
         .goche h3, .goche ul{
             max-width: 55vw;
         }
         .droate h4, .droate ul{
             max-width: 40vw;
         }
-    }
-
-    @media (min-width: 1200px){
-        h3, h4{
-            text-align: center;
+        header.smoothing{
+            transform: translateY(-60px);
+        }
+        .goche.smoothing{
+            transform: translateX(-50px);
+        }
+        .droate.smoothing{
+            transform: translateX(50px);
+        }
+        .goche.smoothing h3{
+            transform: translateX(-50px);
+        }
+        .droate.smoothing h4{
+            transform: translateX(50px);
         }
     }
 </style>

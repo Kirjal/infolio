@@ -49,9 +49,10 @@ export default {
   --warning-color: #fd5;
   --title-color: #344;
   --title-bg: #eff;
+  scroll-behavior: smooth;
 }
 
-*{
+*, *::before, *::after{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -88,5 +89,13 @@ a{
 a:hover{
   color: var(--link-text-hover);
   background-color: var(--link-bg-hover);
+}
+
+.load_smoothing{
+  transition: all 0.8s;
+}
+
+.transparent{
+  opacity: 0;
 }
 </style>
