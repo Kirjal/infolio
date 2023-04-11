@@ -28,6 +28,7 @@
             opacity_transition: true
         }),
         mounted(){
+            scrollTo(0, 0);
             setTimeout(()=>{this.opacity_transition = false}, 100);
         }
     }
