@@ -5,9 +5,8 @@
             <li
                 :class="i.open? 'current_image' : ''"
                 :id="'image'+i.id" v-for="i of this.images"
-                :key="i.id" @click="closeTabs(this.images, i.id);
-                i.open=!i.open;
-                if(i.open){scrollToImage(i.id)}"
+                :key="i.id"
+                @click="closeTabs(this.images, i.id); i.open=!i.open; if(i.open){scrollToImage(i.id)}"
             >
                 <div class="image">
                     <img :src="i.link"/>

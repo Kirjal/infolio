@@ -1,5 +1,8 @@
 <template>
-    <nav @click="this.nav_open=!nav_open" :class="nav_open? 'nav_open' : ''">
+    <nav
+        @click="this.nav_open=!nav_open"
+        :class="nav_open? 'nav_open' : ''"
+    >
         <div class="nav_screen_block"></div>
         <div class="menu">
             <div></div>
