@@ -62,6 +62,7 @@
 </template>
 
 <script>
+
     export default {
         name: 'CvComponent',
         data:()=>({
@@ -74,11 +75,19 @@
             linkedin: "https://www.linkedin.com/in/alexandre-demontier-778468167/",
             github: "https://github.com/Kirjal",
             skills: [
-                "Code front-end en HTML, CSS, JS, et via Angular, VueJS, ReactJS",
-                "Design, intégration responsive et accessible",
-                "Maquettage, mise en page, dessin avec la suite Adobe : InDesign, Photoshop, Illustrator, XD, After Effects, Animate"
+                "Intégration responsive et accessible en HTML, CSS, JS",
+                "Travail avec les frameworks et bibliothèques : React, Vue.js, Angular, Tailwind",
+                "Gestion de formulaires et requêtes vers API",
+                "Gestion d'état d'une SPA avec Redux",
+                "Maquettage, mise en page, dessin avec la suite Adobe et Figma",
+                "Mise en place d'un CRUD basique avec Node.js, Express, et Sequelize"
             ],
             experiences: [
+                {
+                    title: "Développeur front-end - Incubateur 1Formation-1Job Euratechnologies",
+                    description: "Travail de groupe sur un projet web en méthode agile, avec React, Redux, Tailwind en front-end, Node.js en back-end",
+                    date: "2023"
+                },
                 {
                     title: "Design et intégration d'un site personnel",
                     description: "C'est le site sur lequel vous naviguez actuellement, fait avec Vue.js",
@@ -87,12 +96,12 @@
                 {
                     title: "Organisation d'un job-dating - Clockwork Lille",
                     description: "Conception de logo, design graphique dans le cadre de Ré-actifs",
-                    date: "2022, 2 mois"
+                    date: "2022"
                 },
                 {
                     title: "Stage en Webdesign - Association Building Seniors",
                     description: "Refonte visuelle d'un site internet avec Symfony et Bootstrap : charte graphique, maquettage, corrections de bugs, travail du responsive, intégration des maquettes",
-                    date: "2021, 2 mois"
+                    date: "2021"
                 }
             ],
             training: [
@@ -112,24 +121,9 @@
                     date: "2021"
                 },
                 {
-                    title: "Arts et Design - ESAD Valenciennes",
-                    description: "Créativité, méthodes de création et de design",
-                    date: "2016 - 2017"
-                },
-                {
-                    title: "Mise à Niveau en Arts Appliqués - ESAAT Roubaix",
-                    description: "Méthodes de création et de design, organisation d'un défilé de mode, voyage en Angleterre en famille d'accueil",
-                    date: "2015 - 2016"
-                },
-                {
-                    title: "Cours d'arts plastiques & BD - CAPV Lille",
-                    description: "Multiples projets d'art, participation à un fanzine, travail de la créativité",
-                    date: "2011 - 2015"
-                },
-                {
-                    title: "Bac S section euro - Lycée international Montebello Lille",
-                    description: "",
-                    date: "2015"
+                    title: "Arts plastiques et appliqués - CAPV Lille, ESAAT Roubaix, ESAD Valenciennes",
+                    description: "Multiples projets d'art, méthodes de création et design, organisation d'un défilé de mode, participation à un fanzine",
+                    date: "2011 - 2017"
                 }
             ],
             soft_skills: [
@@ -157,25 +151,25 @@
             languages: [
                 {
                     title: "Anglais",
-                    level: "confirmé"
+                    level: "C2"
                 },
                 {
                     title: "Allemand",
-                    level: "intermédiaire"
+                    level: "A2"
                 }
             ],
             hobbies: [
                 {
                     title: "Jeux vidéo",
-                    description: /*"Épreuves en groupe de 12, analyse de données"*/""
+                    description: "Travail d'équipe en raid à 12 joueurs sur Elder Scrolls Online, théorie et optimisation sur Path of Exile et Wakfu"
                 },
                 {
                     title: "Dessin, peinture",
-                    description: /*"Dessin de personnages ou environnements imaginaires, modèle vivant"*/""
+                    description: "Principalement des travaux au feutre fin noir, avec plusieurs exemples dans la section \"Dessins\" de ce site"
                 },
                 {
                     title: "Roller",
-                    description: /*"Sorties avec des amis, ou déplacement au travail"*/""
+                    description: "Sorties avec des amis et déplacements occasionnels"
                 }
             ]
         }),
@@ -250,7 +244,7 @@
         text-align: left;
     }
 
-    .goche ul b{
+    .goche ul b, .droate ul b{
         display: inline-block;
     }
 
