@@ -85,7 +85,7 @@
             experiences: [
                 {
                     title: "Développeur front-end - Incubateur 1Formation-1Job Euratechnologies",
-                    description: "Travail de groupe sur un projet web en méthode agile, avec React, Redux, Tailwind en front-end, Node.js en back-end",
+                    description: "Travail de groupe sur un site de covoiturage en méthode agile, avec React, Redux, Tailwind en front-end, Node.js en back-end",
                     date: "2023"
                 },
                 {
@@ -169,7 +169,7 @@
                 },
                 {
                     title: "Roller",
-                    description: "Sorties avec des amis et déplacements occasionnels"
+                    description: ""
                 }
             ]
         }),
