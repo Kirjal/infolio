@@ -69,7 +69,7 @@
             opacity_transition: true,
             title: "Développeur front-end",
             name: "Alexandre Demontier : CV",
-            catchphrase: "À la recherche de défis, je souhaite mettre mes compétences à l'épreuve",
+            catchphrase: "À la recherche de défis, je souhaite mettre mes compétences à l'épreuve.",
             tel: "06 03 59 93 46",
             mail: "Alexandre_Demontier@hotmail.fr",
             linkedin: "https://www.linkedin.com/in/alexandre-demontier-778468167/",
@@ -78,7 +78,7 @@
                 "Intégration responsive et accessible en HTML, CSS, JS",
                 "Travail avec les frameworks et bibliothèques : React, Vue.js, Angular, Tailwind",
                 "Gestion de formulaires et requêtes vers API",
-                "Gestion d'état d'une SPA avec Redux",
+                "Gestion d'état d'une appli React avec Redux",
                 "Maquettage, mise en page, dessin avec la suite Adobe et Figma",
                 "Mise en place d'un CRUD basique avec Node.js, Express, et Sequelize"
             ],
@@ -86,44 +86,44 @@
                 {
                     title: "Développeur front-end - Incubateur 1Formation-1Job Euratechnologies",
                     description: "Travail de groupe sur un site de covoiturage en méthode agile, avec React, Redux, Tailwind en front-end, Node.js en back-end",
-                    date: "2023"
+                    date: "2023 - 4 mois"
                 },
                 {
                     title: "Design et intégration d'un site personnel",
                     description: "C'est le site sur lequel vous naviguez actuellement, fait avec Vue.js",
-                    date: "2022"
+                    date: "2022 - projet en continu"
                 },
                 {
                     title: "Organisation d'un job-dating - Clockwork Lille",
                     description: "Conception de logo, design graphique dans le cadre de Ré-actifs",
-                    date: "2022"
+                    date: "2022 - 1 mois"
                 },
                 {
                     title: "Stage en Webdesign - Association Building Seniors",
                     description: "Refonte visuelle d'un site internet avec Symfony et Bootstrap : charte graphique, maquettage, corrections de bugs, travail du responsive, intégration des maquettes",
-                    date: "2021"
+                    date: "2021 - 2 mois"
                 }
             ],
             training: [
                 {
                     title: "POEC Développement front-end - Dawan Lille",
                     description: "Travail intensif des technologies du web front, projet de groupe",
-                    date: "2022"
+                    date: "2022 - 3 mois"
                 },
                 {
                     title: "Programme Ré-actifs - Clockwork Lille",
                     description: "Développement du réseau professionnel, organisation de job-dating",
-                    date: "2022"
+                    date: "2022 - 6 mois"
                 },
                 {
                     title: "Titre professionnel niveau Bac+2 en Webdesign - AFPA Roubaix",
                     description: "Formation intensive à l'intégration web, design web, et graphisme",
-                    date: "2021"
+                    date: "2021 - formation de 9 mois"
                 },
                 {
-                    title: "Arts plastiques et appliqués - CAPV Lille, ESAAT Roubaix, ESAD Valenciennes",
-                    description: "Multiples projets d'art, méthodes de création et design, organisation d'un défilé de mode, participation à un fanzine",
-                    date: "2011 - 2017"
+                    title: "Arts plastiques et appliqués - ESAAT Roubaix, ESAD Valenciennes",
+                    description: "Multiples projets d'art, méthodes de création et design, organisation d'un défilé de mode",
+                    date: "2015 - 2017"
                 }
             ],
             soft_skills: [
